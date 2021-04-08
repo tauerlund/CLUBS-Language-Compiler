@@ -1,6 +1,6 @@
 # CLUBS language compiler
 
-Programming language developed during 4th semester project for the purpose of programming card games.
+Programming language developed during 4th semester project for the purpose of programming card games. 
 
 ## Authors
 
