@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubsCompiler.Program", "ClubsCompiler.Program\ClubsCompiler.Program.csproj", "{DFDEE622-C61D-4151-ABCE-20ECE15007A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubsCompiler.Tests", "ClubsCompiler.Tests\ClubsCompiler.Tests.csproj", "{45A4FC2B-35BD-43F8-823F-9CA6C27E7658}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFDEE622-C61D-4151-ABCE-20ECE15007A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDEE622-C61D-4151-ABCE-20ECE15007A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDEE622-C61D-4151-ABCE-20ECE15007A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDEE622-C61D-4151-ABCE-20ECE15007A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A4FC2B-35BD-43F8-823F-9CA6C27E7658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A4FC2B-35BD-43F8-823F-9CA6C27E7658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A4FC2B-35BD-43F8-823F-9CA6C27E7658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A4FC2B-35BD-43F8-823F-9CA6C27E7658}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5CD7160-5CC7-4BA7-9C56-488A42E23058}
+	EndGlobalSection
+EndGlobal

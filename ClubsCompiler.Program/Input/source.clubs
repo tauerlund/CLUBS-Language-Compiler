@@ -1,0 +1,79 @@
+﻿setup {	
+
+	// Initializing card values and deck
+
+	String : tester = "test"
+
+	Set OF CardValue : suit = [hearts, clubs, spades, diamonds]
+
+	Set OF CardValue : rank = [two < three < four < five < six < seven < eight < nine < ten < jack < queen < king < ace]
+	
+	Set OF Card : deck = [rank][suit]
+
+	// Initializing players
+
+	Set OF Player : players = [player1, player2]
+
+  Player OWNS [Set OF Card : cards, Set OF Card : hand]
+
+	// Shuffling the deck
+
+	Set OF Card : shuffledDeck
+
+	WHILE deck.count > 0 {
+		FROM deck TAKE 1 AT RANDOM 0 TO deck4.count PUT shuffledDeck
+	}
+
+	deck = shuffledDeck
+
+	PRINT "Deck has been shuffled."
+
+	// Win condition
+
+	Bool : hasWinner = false
+
+	Set OF Card : warPile
+
+	FORALL player IN players {
+		FROM deck TAKE 26 PUT player.cards
+	}
+
+	WHILE hasWinner IS false {
+		
+		FORALL player IN players {
+			FROM player.cards TAKE 1 PUT player.hand
+			PRINT player + " draws " + player.hand
+		}
+
+		IF player1.hand > player2.hand {
+			PRINT player1 + " has high card!"
+			player2.hand PUT player1.cards
+			warPile PUT player1.cards
+		}
+		ELSE IF player2.hand > player1.hand {
+			PRINT player2 + " has high card!"
+			player1.hand PUT player2.cards
+			warPile PUT player2.cards
+		}
+		ELSE {
+			PRINT "War!"
+
+			FORALL player IN players {
+				player.hand PUT warPile
+				FROM player.cards TAKE 2 PUT warPile
+			}
+		}
+
+		FORALL player IN players {
+			player.hand PUT player.cards
+		}
+
+		FORALL player IN players {
+			PRINT player + " has " + player.cards.count + " cards."
+			IF player.cards.count IS 52 {
+				hasWinner = true
+				PRINT player + " wins!"
+			}
+		}
+	}	
+}

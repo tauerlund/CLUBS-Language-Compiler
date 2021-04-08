@@ -1,0 +1,126 @@
+﻿	Set OF CardValue : suit = [hearts, clubs, spades, diamonds]
+	Set OF CardValue : rank = [two < three < four < five < six, seven]
+
+	{
+	Set OF Card : deck = [rank][player1]	
+
+	
+	Set OF CardValue : suit = [hearts][diamonds] // Dette er ulovligt, men er det ikke underligt??? 
+
+		Set OF CardValue : suit = [hearts, clubs, spades, diamonds]
+	Set OF CardValue : rank = [two < three < four < five < six, seven]
+
+
+	Set OF Card : deck = [rank][player1]
+
+	Player : player1
+	Player : player2
+
+	player1 = player2
+
+	Set OF Player : players = [player1, player2]
+
+
+
+
+		deck = [suit][rank][test]
+
+	Player : player1
+	Set OF Player : players = [player1, player2] 
+
+	players = [player1, player2]
+
+	suit = [hearts < clubs, joker]
+
+
+	}
+
+Uno eksempel! 
+
+setup {
+	Set OF CardValue : color = [red, yellow, green, blue]
+
+	Set OF CardValue : type1 = [zero, one, two, three, four, five, six, seven, eight, nine, skip, reverse, drawTwo]
+	Set OF CardValue : type2 = [one, two, three, four, five, six, seven, eight, nine, skip, reverse, drawTwo]
+
+	Set OF Card : deck1 = [color][type1]
+	Set OF Card : deck2 = [color][type2]
+
+	deck2 PUT deck1
+
+	Set OF CardValue : specialType = [drawFour, changeColor]
+	Set OF CardValue : fourOfEach = [a1, a2, a3, a4]
+
+	Set OF Card : specialCards = [specialType][fourOfEach]
+
+	specialCards PUT deck1
+
+	Grammar rules graveyard
+
+	/** COMMENT : '/*' .*? '*/' -> skip ; */
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setup {	
+  
+	// RUNTIME ERROR TRIGGERS
+	//5 = 5
+	//Int : test = 4 * 
+
+
+	Int : test = 4
+
+	test = 5
+
+	Int : test2
+
+	Int : test3 = 5 + 2 - test * 2/3 
+
+
+	Set OF CardValue : suit = [hearts, clubs, spades, diamonds]
+
+	Set OF CardValue : rank = [two < three < four < five < six < seven < eight < nine < ten < jack < queen < king < ace]
+
+	Set OF Card : deck = [rank][suit]
+
+	Set OF Player : players = [player1, player2, player3]
+
+	Int : numberOfPlayers = players.count
+
+	Player OWNS [Set OF Card : hand, Int : chips]
+
+	FORALL player IN players {
+		FROM deck TAKE 2+2 PUT player.hand
+		player.chips = 200
+	}
+
+	Int : numberOfPlayers1 = player1.hand.count
+
+	FORALL player IN players {
+		PRINT player + " hand is " + player.hand
+	}
+
+	CardValue : foo
+	PRINT foo
+
+	PRINT players
+
+	PRINT "CLUBS rocks!"
+
+}
